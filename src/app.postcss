@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	/* Reference name */
+	font-family: 'Abril Fatface';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/RobotCondensed-Regular');
+}
+
+.theme-btn {
+    @apply btn 
+    px-4 
+    leading-6 
+    font-medium 
+    rounded-lg 
+    text-sm 
+    py-2.5 
+    mr-2 
+    mb-2
+    bg-primary-500 
+    text-surface-500
+    hover:bg-gray-900 
+    focus:outline-none 
+    focus:ring-4
+    focus:ring-gray-300 
+    dark:bg-primary-700 
+    dark:hover:bg-gray-700
+    dark:focus:ring-gray-700
+    dark:border-gray-700;
+}
+
+h2 {
+    @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white
+}
+
+.bounty-card {
+    @apply card p-5 text-center
+}
+
+.bounty-card--count {
+    @apply text-5xl mb-2
+}
+
+.bounty-card--text {
+    @apply text-2xl font-bold
+}
