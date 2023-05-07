@@ -1,12 +1,11 @@
 <script lang="ts">
-	import '../app.postcss';
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	import { supabase } from '../lib/superbaseClient';
 	import type { AuthSession } from '@supabase/supabase-js';
 
-	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../theme.postcss';
+	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
 	import '../lib/localStore';
 

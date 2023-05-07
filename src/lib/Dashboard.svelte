@@ -95,9 +95,9 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-3 md:gap-6 gap-y-6">
 			<div class="col-span-1">
-				<div class="bounty-card">
-					<div class="bounty-card--count">0</div>
-					<div class="bounty-card--text">Bounty Points</div>
+				<div class="card p-5 text-center;">
+					<div class="text-5xl mb-2">0</div>
+					<div class="text-2xl font-bold">Bounty Points</div>
 				</div>
 			</div>
 
