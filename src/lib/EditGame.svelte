@@ -5,7 +5,7 @@
 	// Stores
 	import { ListBox, ListBoxItem, modalStore, popup, type PopupSettings } from '@skeletonlabs/skeleton';
 
-
+	console.log(parent)
 	let comboboxValue: string;
 	
 	// Form Data
@@ -14,6 +14,7 @@
 		tel: '214-555-1234',
 		email: 'jdoe@email.com',
 	};
+
 	// We've created a custom submit function to pass the response and close the modal.
 	function onFormSubmit(): void {
 

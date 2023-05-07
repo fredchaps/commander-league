@@ -3,11 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-	/* Reference name */
-	font-family: 'Abril Fatface';
-	/* For multiple files use commas, ex: url(), url(), ... */
-	src: url('/fonts/RobotCondensed-Regular');
-}
+    font-family: "Dorian Gore Condensed";
+    src:url("/fonts/doriangorecond.eot?") format("eot"),url("/fonts/doriangorecond.woff") format("woff"),url("/fonts/doriangorecond.ttf") format("truetype"),url("/fonts/doriangorecond.svg#/fonts/doriangorecondensed") format("svg");font-weight:normal;font-style:normal;}
 
 .theme-btn {
     @apply btn 
@@ -29,6 +26,16 @@
     dark:hover:bg-gray-700
     dark:focus:ring-gray-700
     dark:border-gray-700;
+}
+
+.theme-heading {
+    font-family: "Dorian Gore Condensed";
+}
+
+.theme-background {
+    background: var(--color-surface-600);
+    background-image: radial-gradient(at 0% 0%,rgba(var(--color-secondary-400) / .33) 0px,transparent 50%),radial-gradient(at 98% 1%,rgba(var(--color-primary-500) / .33) 0px,transparent 50%);
+    
 }
 
 h2 {
