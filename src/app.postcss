@@ -1,55 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Write your global styles here, in PostCSS syntax */
 
 @font-face {
-    font-family: "Dorian Gore Condensed";
-    src:url("/fonts/doriangorecond.eot?") format("eot"),url("/fonts/doriangorecond.woff") format("woff"),url("/fonts/doriangorecond.ttf") format("truetype"),url("/fonts/doriangorecond.svg#/fonts/doriangorecondensed") format("svg");font-weight:normal;font-style:normal;}
+	font-family: 'Dorian Gore Condensed';
+	src: url('/fonts/doriangorecond.eot?') format('eot'),
+		url('/fonts/doriangorecond.woff') format('woff'),
+		url('/fonts/doriangorecond.ttf') format('truetype'),
+		url('/fonts/doriangorecond.svg#/fonts/doriangorecondensed') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 .theme-btn {
-    @apply btn 
-    px-4 
-    leading-6 
-    font-medium 
-    rounded-lg 
-    text-sm 
-    py-2.5 
-    mr-2 
+	@apply btn
+    px-4
+    leading-6
+    font-medium
+    rounded-lg
+    text-sm
+    py-2.5
+    mr-2
     mb-2
-    bg-primary-500 
+    bg-primary-500
     text-surface-500
-    hover:bg-gray-900 
-    focus:outline-none 
+    hover:bg-gray-900
+    focus:outline-none
     focus:ring-4
-    focus:ring-gray-300 
-    dark:bg-primary-700 
+    focus:ring-gray-300
+    dark:bg-primary-700
     dark:hover:bg-gray-700
     dark:focus:ring-gray-700
     dark:border-gray-700;
 }
 
 .theme-heading {
-    font-family: "Dorian Gore Condensed";
+	font-family: 'Dorian Gore Condensed';
 }
 
 .theme-background {
-    background: var(--color-surface-600);
-    background-image: radial-gradient(at 0% 0%,rgba(var(--color-secondary-400) / .33) 0px,transparent 50%),radial-gradient(at 98% 1%,rgba(var(--color-primary-500) / .33) 0px,transparent 50%);
-    
+	background: var(--color-surface-600);
+	background-image: radial-gradient(
+			at 0% 0%,
+			rgba(var(--color-secondary-400) / 0.33) 0px,
+			transparent 50%
+		),
+		radial-gradient(at 98% 1%, rgba(var(--color-primary-500) / 0.33) 0px, transparent 50%);
 }
 
 h2 {
-    @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white
+	@apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
 }
 
 .bounty-card {
-    @apply card p-5 text-center
+	@apply card p-5 text-center;
 }
 
 .bounty-card--count {
-    @apply text-5xl mb-2
+	@apply text-5xl mb-2;
 }
 
 .bounty-card--text {
-    @apply text-2xl font-bold
+	@apply text-2xl font-bold;
 }
+
+@tailwind components;
+
+@tailwind utilities;

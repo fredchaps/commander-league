@@ -1,40 +1,47 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
+	import '../app.postcss';
+	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
-	import { supabase } from '../lib/superbaseClient'
-	import type { AuthSession } from '@supabase/supabase-js'
+	import { supabase } from '../lib/superbaseClient';
+	import type { AuthSession } from '@supabase/supabase-js';
 
-	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/all.css';
+	import '../theme.postcss';
 	import '../app.postcss';
 	import '../lib/localStore';
 
 	import { LightSwitch, AppBar, Modal, storePopup, Toast } from '@skeletonlabs/skeleton';
-    import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 
 	let session: AuthSession | null;
-	
-	onMount(() => {
-	  supabase.auth.getSession().then(({ data }) => {
-		session = data.session
-	  })
 
-	  const { data } = supabase.auth.onAuthStateChange((_event, _session) => {
+	onMount(() => {
+		supabase.auth.getSession().then(({ data }) => {
+			session = data.session;
+		});
+
+		const { data } = supabase.auth.onAuthStateChange((_event, _session) => {
 			if (_session?.expires_at !== session?.expires_at) {
 				invalidate('supabase:auth');
 			}
 		});
 
 		return () => data.subscription.unsubscribe();
-	})
+	});
 
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
+
 <div>
 	<Modal />
-	<Toast position="t"/>
+	<Toast position="t" />
 	<nav class="sticky top-0 w-full">
-		<AppBar background="none" gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+		<AppBar
+			background="none"
+			gridcolumns="grid-cols-3"
+			slotdefault="place-self-center"
+			slottrail="place-content-end"
+		>
 			<svelte:fragment slot="lead">
 				<a class="btn" href="/">RBN</a>
 			</svelte:fragment>
@@ -45,7 +52,7 @@
 					<button type="button" class="btn block" on:click={() => supabase.auth.signOut()}>
 						Sign Out
 					</button>
-					<LightSwitch/>
+					<LightSwitch />
 				{:else}
 					<a class="btn" href="/dashboard">Sign In</a>
 				{/if}

@@ -3,23 +3,28 @@
 	/** Exposes parent props to this component. */
 	export let parent: any;
 	// Stores
-	import { ListBox, ListBoxItem, modalStore, popup, type PopupSettings } from '@skeletonlabs/skeleton';
+	import {
+		ListBox,
+		ListBoxItem,
+		modalStore,
+		popup,
+		type PopupSettings
+	} from '@skeletonlabs/skeleton';
 
-	console.log(parent)
+	console.log(parent);
 	let comboboxValue: string;
-	
+
 	// Form Data
 	const formData = {
 		name: 'Jane Doe',
 		tel: '214-555-1234',
-		email: 'jdoe@email.com',
+		email: 'jdoe@email.com'
 	};
 
 	// We've created a custom submit function to pass the response and close the modal.
 	function onFormSubmit(): void {
-
 		// TODO:
-		// store  game winner 
+		// store  game winner
 		// create a toast notification for status
 
 		if ($modalStore[0].response) $modalStore[0].response(formData);
@@ -48,8 +53,8 @@
 			username: 'player 4',
 			seat: 4
 		}
-	]
-    
+	];
+
 	let popupCombobox: PopupSettings = {
 		event: 'focus-click',
 		target: 'combobox',
@@ -57,7 +62,6 @@
 		// Close the popup when the item is clicked
 		closeQuery: '.listbox-item'
 	};
-
 </script>
 
 <!-- @component This example creates a simple form modal. -->
@@ -68,25 +72,19 @@
 		<!-- Enable for debugging: -->
 		<!-- <pre>{JSON.stringify($modalStore[0], null, 2)}</pre> -->
 
+		<div class="card w-48 shadow-xl py-2 z-50" data-popup="combobox">
+			<!-- Listbox -->
+			<ListBox rounded="rounded-none">
+				<ListBoxItem bind:group={comboboxValue} name="medium" value="books">Books</ListBoxItem>
+				<ListBoxItem bind:group={comboboxValue} name="medium" value="movies">Movies</ListBoxItem>
+				<ListBoxItem bind:group={comboboxValue} name="medium" value="television">
+					Television
+				</ListBoxItem>
+			</ListBox>
+			<!-- Arrow -->
+			<div class="arrow bg-surface-100-800-token" />
+		</div>
 
-	<div class="card w-48 shadow-xl py-2 z-50" data-popup="combobox">
-		<!-- Listbox -->
-		<ListBox rounded="rounded-none">
-			<ListBoxItem bind:group={comboboxValue} name="medium" value="books">
-				Books
-			</ListBoxItem>
-			<ListBoxItem bind:group={comboboxValue} name="medium" value="movies">
-				Movies
-			</ListBoxItem>
-			<ListBoxItem bind:group={comboboxValue} name="medium" value="television">
-				Television
-			</ListBoxItem>
-		</ListBox>
-		<!-- Arrow -->
-		<div class="arrow bg-surface-100-800-token" />
-	</div>
-
-	
 		<div class="table-container">
 			<!-- Native Table Element -->
 			<table class="table table-hover">
